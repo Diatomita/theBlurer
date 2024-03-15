@@ -4,16 +4,17 @@
   "description": "Remove paywall, blur e randomizacao de texto de um site de provas aí...",
   "version": "1.4.1",
   "permissions": [
-      "activeTab"
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
   ],
   "content_scripts": [
       {
-          "matches": ["<all_urls>"],
+          "matches": ["https://www.passeidireto.com/*"],
           "js": ["deblur.js"]
-      },
-      {
-          "matches": ["<all_urls>"],
-          "js": ["deshuffle.css"]
       }
+  ],
+  "web_accessible_resources": [
+    "arquivo.js"
   ]
 }

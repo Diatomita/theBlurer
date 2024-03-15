@@ -1,15 +1,14 @@
-// Remove o paywall e o blur
-function removeDivs() {
+// Funcao p operar dinamicamente com o mutation
+function removeFX() {
+    // Remove o paywall
     const divs = document.getElementsByClassName('mv-content-limitation-fake-page short-preview-version short-preview-version-background');
     if (divs.length > 0) {
         Array.from(divs).forEach((div) => {
             div.parentNode.removeChild(div);
         });
-        console.log("Elementos removidos");
-    } else {
-        console.log("Nenhum elemento encontrado para remoção");
+        console.log("Elementos de paywall removidos");
     }
-
+/*
     // Muda pra 0px o blur de qqr coisa no body
     const elements = document.querySelectorAll('body *[style*="filter: blur(10px)"]');
     if (elements.length > 0) {
@@ -20,14 +19,20 @@ function removeDivs() {
         });
     } else {
         console.log("Nenhum elemento encontrado para remocao de estilo");
-    }
+    } */
 }
+
+// Injeta nosso proprio js q n tem a chamada da funcao tryApplyBlur() que aplica o blur e o shuffle
+var script = document.createElement('script');
+script.src = chrome.extension.getURL('arquivo.js');
+document.head.appendChild(script);
+console.log("custom js aplicado");
 
 // Cria o mutation
 const observer = new MutationObserver((mutationsList, observer) => {
     for (let mutation of mutationsList) {
         if (mutation.type === 'childList' || mutation.type === 'attributes') {
-            removeDivs();
+            removeFX();
         }
     }
 });
@@ -35,4 +40,4 @@ const observer = new MutationObserver((mutationsList, observer) => {
 // Config do mutation
 observer.observe(document.body, { childList: true, subtree: true, attributes: true });
 
-removeDivs();
+removeFX();
