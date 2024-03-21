@@ -8,8 +8,8 @@ Essa é uma extensão web que faz o bypass no paywall, blur e shuffle de texto d
 * Ainda náo funciona com as respostas geradas pela IA do site.
 
 ## Como Instalar:
-* 1. Baixe ao clicar em Code > Local > Download ZIP
-* 2. Descompacte a pasta
-  3. Vá em chrome://extensions ative o modo de desenvolver
-  4. "Carregar sem compatacao"
-  5. Selecione a pasta descompactada
+1. Baixe ao clicar em Code > Local > Download ZIP
+2. Descompacte a pasta
+3. Vá em chrome://extensions ative o modo de desenvolver
+4. "Carregar sem compatacao"
+5. Selecione a pasta descompactada
