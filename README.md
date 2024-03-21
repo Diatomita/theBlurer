@@ -10,6 +10,6 @@ Essa é uma extensão web que faz o bypass no paywall, blur e shuffle de texto d
 ## Como Instalar:
 1. Baixe ao clicar em Code > Local > Download ZIP
 2. Descompacte a pasta
-3. Vá em chrome://extensions ative o modo de desenvolver
-4. "Carregar sem compatação"
+3. Vá em chrome://extensions e ative o modo de desenvolvedor
+4. "Carregar sem compactação"
 5. Selecione a pasta descompactada
