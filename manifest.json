@@ -2,15 +2,19 @@
   "manifest_version": 2,
   "name": "theBlurer",
   "description": "Remove paywall, blur e randomizacao de texto de um site de provas aí...",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "permissions": [
     "webRequest",
     "webRequestBlocking",
     "<all_urls>"
   ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
   "content_scripts": [
       {
-          "matches": ["https://www.passeidireto.com/*"],
+          "matches": ["<all_urls>"],
           "js": ["deblur.js"]
       }
   ],
